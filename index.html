@@ -1,0 +1,44 @@
+<html>
+    <title>styles.css</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <nav>
+        <nav class="nav-class a:hover">
+        <a href="#" class="w3-bar-item w3-button"> <div class="w3-text-red">Home</a>
+        <a href="./charities.html" class="w3-bar-item w3-button"> Charities</a>
+        <a href="./contact.html" class="w3-bar-item w3-button"> Contact Us</a>
+        </nav>
+    <h1 class="h1">
+    <h1>
+        Welcome to HelpHub!
+    </h1>
+    <div id="clock"></div>
+    <script>
+        function updateClock() {
+          const now = new Date();
+          const hours = now.getHours().toString().padStart(2, '0');
+          const minutes = now.getMinutes().toString().padStart(2, '0');
+          const seconds = now.getSeconds().toString().padStart(2, '0');
+          const timeString = `${hours}:${minutes}:${seconds}`;
+          document.getElementById('clock').textContent = timeString;
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+        </script>
+
+<body class="body-class">
+    <header class="header-class">
+    <p>
+    On this website, you will be able to explore some different pages that provide information about HelpHub.
+    At the top of this page you will find some links that will take you to pages providing information about 
+    our charities, how to volunteer, and how you can contact us.
+    </p>
+    <h3> Our Mission</h3>
+    <p>
+    HelpHub is a website designed to create an online space where charities and non-profit foundations can 
+    be displayed in one place where volunteers can easily interact with and get connected.
+    </p>
+    </div>
+</html>

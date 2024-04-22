@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>W3.CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+ 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+
+    <style>
+        /* Hide the clock initially */
+        #clock {
+            display: none;
+        }
+    </style>
+</head>
+<body class="body-class">
+    <nav>
+        <div class="nav-class a:hover">
+            <a href="./index.html" class="w3-bar-item w3-button"> <div class="w3-text-blue">Home</a>
+            <a href="#" class="w3-bar-item w3-button"> Charities</a>
+            <a href="contact.html" class="w3-bar-item w3-button"> Contact Us</a>
+        </div>
+    </nav>
+
+    <h1> Charities </h1>
+    <div id="clock"></div>
+    
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('clock').textContent = timeString;
+            document.getElementById('clock').style.display = 'block'; // Show the clock
+        }
+
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
+
+    <header class="header-class">
+        <p>Through this page, viewers can see the many charities that are associated with the HelpHub website. To get more information on an individual charity below, click on the "visit" button located below the charity.</p>
+        
+        <p>American Red Cross: 123 North Street</p>
+        <button onclick="window.location.href='./charity_profile1.html'">Visit Page</button>
+        
+        <p>The Salvation Army: 321 South Avenue</p>
+        <button onclick="window.location.href='./charity_profile2.html'">Visit Page</button>
+        
+        <p>St. Judes: 987 West Boulevard</p>
+        <button onclick="window.location.href='./charity_profile3.html'">Visit Page</button>
+
+        <div id="map" style="height: 400px;"></div>
+
+        <script>
+            var map = L.map('map').setView([34.06, 118.24], 13);
+        
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19
+            }).addTo(map);
+        
+            var CharityLocations = [
+                { name: 'American Red Cross', latlng: [34.01, 118.14] },
+                { name: 'Salvation Army', latlng: [33.52, 118.15] },
+                { name: 'St. Jude Research Hospital', latlng: [33.52, 118.15] }
+            ];
+        
+            // Add markers for each location
+            CharityLocations.forEach(location => {
+                L.marker(location.latlng).addTo(map).bindPopup(location.name);
+            });
+        </script>
+    </header>
+</body>
+</html>

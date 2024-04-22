@@ -1,0 +1,67 @@
+<html>
+    <title>W3.CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <nav>
+        <nav class="nav-class a:hover">
+        <a href="index.html" class="w3-bar-item w3-button"> <div class="w3-text-blue">Home</a>
+        <a href="./charities.html" class="w3-bar-item w3-button"> Charities</a>
+        <a href="contact.html" class="w3-bar-item w3-button"> Contact Us</a>
+        </nav>
+        <h1 class="h1">
+        <H1> St. Judes Research Hospital</H1>
+        <div id="clock"></div>
+    <script>
+        function updateClock() {
+          const now = new Date();
+          const hours = now.getHours().toString().padStart(2, '0');
+          const minutes = now.getMinutes().toString().padStart(2, '0');
+          const seconds = now.getSeconds().toString().padStart(2, '0');
+          const timeString = `${hours}:${minutes}:${seconds}`;
+          document.getElementById('clock').textContent = timeString;
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+        </script>
+
+        <body class="body-class">
+    <body>
+        <p>
+        St. Judes Research Hospital is a foundation that has a mission to advance cures, and means of 
+        prevention, for pediatric catastrophic diseases through research and treatment. Consistent with
+        the vision of our founder Danny Thomas, no child is denied treatment based on race, religion or
+        a family's ability to pay.
+        </p>
+        <header class="header-class">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            #Form1 {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="Form1">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+    
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required><br>
+    
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50" required></textarea><br>
+    
+            <button type="submit">Submit</button>
+        </form>
+        <button id="volunteerButton">Volunteer Now</button>
+    
+        <script src="charity_profile.js"></script>
+    </body>
+</html>
